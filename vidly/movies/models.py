@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Gener(models.Model):
@@ -10,4 +11,5 @@ class  Movies(models.Model):
     number_in_stock = models.IntegerField()
     daily_rate = models.FloatField()
     gener = models.ForeignKey(Gener, on_delete=models.CASCADE)
-
+    date_created = models.DateTimeField(default=timezone.now)
+    
