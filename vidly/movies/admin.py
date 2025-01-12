@@ -1,6 +1,13 @@
 from django.contrib import admin
-from .models import Movies, Gener
+from .models import Movies, Genre
 
-# Register your models here.
-admin.site.register(Movies)
-admin.site.register(Gener)
+# Register your models here, and customize the tables.
+class GenreAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+
+class MovieAdmin(admin.ModelAdmin):
+    exclude = ('date_created', )
+    list_display = ('title', 'number_in_stock', 'daily_rate', 'date_created')
+
+admin.site.register(Movies, MovieAdmin)
+admin.site.register(Genre, GenreAdmin)
