@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>release year</th>
+            <th>gener</th>
+            <th>daily rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+            <tr>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.release_year }}</td>
+                <td>{{ movie.gener }}</td>
+                <td>{{ movie.daily_rate }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
