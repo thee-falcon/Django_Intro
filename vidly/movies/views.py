@@ -7,3 +7,6 @@ def index(request):
     # SELECT  FROM movies_movie
     movies = Movies.objects.all()
     return render(request, 'movies/index.html', {'movies': movies})
+
+def detail(request, movie_id):
+    return HttpResponse(int(movie_id))
