@@ -13,7 +13,7 @@ main
     <tbody>
         {% for movie in movies %}
         <tr>
-            <td>{{ movie.title }}</td>
+            <td><a href="/movies/{{ movie.id }}">{{ movie.title }}</a></td>
             <td>{{ movie.release_year }}</td>
             <td>{{ movie.gener }}</td>
             <td>{{ movie.daily_rate }}</td>
